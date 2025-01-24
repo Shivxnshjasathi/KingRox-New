@@ -13,6 +13,7 @@ class Signupscreen extends StatefulWidget {
 
 class _SignupscreenState extends State<Signupscreen> {
   bool isChecked = false;
+  bool isMaleSelected = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,35 +177,58 @@ class _SignupscreenState extends State<Signupscreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                width: 173,
-                                height: 41,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xFFFCCE1B),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isMaleSelected = true;
+                                  });
+                                },
+                                child: Container(
+                                  width: 173,
+                                  height: 41,
+                                  decoration: BoxDecoration(
+                                    color: isMaleSelected
+                                        ? const Color(0xFFFCCE1B)
+                                        : const Color(0xFFE6E6E6),
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
-                                child: Center(
-                                  child: CustomTextScreen(
-                                    text: "Male",
-                                    color: const Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
+                                        BorderRadius.all(Radius.circular(20)),
+                                  ),
+                                  child: Center(
+                                    child: CustomTextScreen(
+                                      text: "Male",
+                                      color: const Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
                               ),
-                              Container(
-                                width: 173,
-                                height: 41,
-                                decoration: BoxDecoration(
-                                    color: const Color(0xFFE6E6E6),
+                              SizedBox(
+                                  width:
+                                      16), // Add some space between the buttons
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    isMaleSelected = false;
+                                  });
+                                },
+                                child: Container(
+                                  width: 173,
+                                  height: 41,
+                                  decoration: BoxDecoration(
+                                    color: isMaleSelected
+                                        ? const Color(0xFFE6E6E6)
+                                        : const Color(0xFFFCCE1B),
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(20))),
-                                child: Center(
-                                  child: CustomTextScreen(
-                                    text: "Female",
-                                    color: const Color.fromARGB(255, 0, 0, 0),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
+                                        BorderRadius.all(Radius.circular(20)),
+                                  ),
+                                  child: Center(
+                                    child: CustomTextScreen(
+                                      text: "Female",
+                                      color: const Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                    ),
                                   ),
                                 ),
                               ),
