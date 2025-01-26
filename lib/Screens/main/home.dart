@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kiingrox/Screens/main/details.dart';
 import 'package:kiingrox/const/button.dart';
 import 'package:kiingrox/const/button2.dart';
 
@@ -45,11 +46,10 @@ class _HomeState extends State<Home> {
                   ),
                   InkWell(
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => TicketaDeatilsScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Details()),
+                        );
                       },
                       child: tile()),
                   SizedBox(
